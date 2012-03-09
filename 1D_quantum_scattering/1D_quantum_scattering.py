@@ -43,7 +43,7 @@ class OneDQuantumScatteringNumerov:
         self._psi[r:] = map(lambda x, k: exp(-1j*x*sqrt(k)), self._x[r:], self._k[r:])
 
         for i in range(r, l-1, -1):
-            self._psi[i-1] = numerov(self._dx, self._k[i], self._psi[i], self._k[i+1], self._psi[i+1], self._k[i+1])
+            self._psi[i-1] = numerov(self._dx, self._k[i], self._psi[i], self._k[i+1], self._psi[i+1], self._k[i-1])
         
         # calculate the coefficients A, B for the pre-barrier solution
         p1 = self._psi[l]
