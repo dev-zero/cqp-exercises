@@ -62,7 +62,7 @@ class HKrScattering:
 
             K = r1*u2/(r2*u1)
 
-            k = E*2 # <-- k depends on r or is this a different k?
+            k = sqrt(E*mh)
 
             delta = arctan2( K*sph_jn(l, k*r1)[0][l] - sph_jn(l, k*r2)[0][l] , K*sph_yn(l, k*r1)[0][l] - sph_yn(l, k*r2)[0][l] )
             s_tot += (2*l + 1)*sin(delta)**2 * 4*pi/k**2
